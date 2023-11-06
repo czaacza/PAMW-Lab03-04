@@ -5,8 +5,6 @@ import {
   catListGet,
   catPost,
   catPut,
-  catPutAdmin,
-  catDeleteAdmin,
 } from '../controllers/catController';
 import multer, {FileFilterCallback} from 'multer';
 import {body, param, query} from 'express-validator';
@@ -15,8 +13,6 @@ import passport from '../../passport';
 const router = express.Router();
 
 router.route('/').get(catListGet).post(catPost);
-
-router.route('/admin/:id').put(catPutAdmin).delete(catDeleteAdmin);
 
 router
   .route('/:id')
